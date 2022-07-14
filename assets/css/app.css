@@ -186,11 +186,11 @@ body {
   background-color: purple;
   color: white;
 }
-.pricing-button:hover + div {
+.pricing-button:hover + .pricing-price {
   color: white;
   background-color: #2c2e3d;
 }
-.pricing-button:hover + div .value {
+.pricing-button:hover + .pricing-price .value {
   color: purple;
 }
 @media (max-width: 1190px) {
