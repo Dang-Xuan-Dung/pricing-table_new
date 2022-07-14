@@ -46,16 +46,18 @@ body {
   }
 
   &-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: -60px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 37px 0;
+    z-index: 11;
     width: 120px;
     height: 120px;
     border-radius: 50%;
     background-color: #ffffff;
-    z-index: 111;
 
     &.price-mountain .value {
       color: #625e60;
@@ -63,14 +65,6 @@ body {
 
     &.price-forest .value {
       color: #40b22d;
-    }
-
-    &.active {
-      background-color: #2c2e3d;
-
-      .value {
-        color: purple;
-      }
     }
 
     .value {
@@ -179,12 +173,6 @@ body {
     border: 1.5px solid #3399ff;
     transition: all 0.25s linear;
 
-    &:hover {
-      color: white;
-      border-color: #6c136f;
-      background-color: #6c136f;
-    }
-
     &.btn-mountain {
       border-color: #625e60;
       color: #625e60;
@@ -194,23 +182,37 @@ body {
       border-color: #40b22d;
       color: #40b22d;
     }
+
+    &:hover {
+      border-color: purple;
+      background-color: purple;
+      color: white;
+    }
+    &:hover + div {
+      color: white;
+      background-color: #2c2e3d;
+
+      .value {
+        color: purple;
+      }
+    }
   }
 
-  @media screen and(max-width: 1190px) {
+  @media (max-width: 1190px) {
     &-list {
       justify-content: center;
       gap: 80px 10px;
     }
   }
 
-  @media screen and(max-width: 1150px) {
+  @media (max-width: 1150px) {
     &-list {
       flex-wrap: wrap;
       gap: 80px 40px;
     }
   }
 
-  @media screen and(max-width: 790px) {
+  @media (max-width: 790px) {
     &-list {
       gap: 80px 15px;
     }
